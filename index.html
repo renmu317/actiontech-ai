@@ -302,7 +302,16 @@
     background:radial-gradient(circle,rgba(167,139,250,0.15) 0%,transparent 70%);
     pointer-events:none;
   }
-  .show-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;}
+  .show-tabs{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+  .show-tab{
+    padding:10px 24px;border-radius:999px;font-size:14px;font-weight:600;
+    background:var(--card);border:1px solid var(--line);color:var(--ink-soft);
+    cursor:pointer;transition:all .25s;
+  }
+  .show-tab:hover{border-color:var(--amber);color:var(--ink);}
+  .show-tab.active{background:linear-gradient(135deg,var(--amber),var(--coral));color:#1a0f08;border-color:transparent;}
+  .show-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;}
+  .proj.hidden{display:none;}
   .proj{
     border-radius:20px;overflow:hidden;border:1px solid var(--line);
     background:var(--card);transition:transform .35s,border-color .35s;cursor:pointer;
@@ -546,10 +555,10 @@
     ActionTech<span style="color:var(--ink-dim);font-weight:500;">·AI</span>
   </a>
   <div class="nav-links" id="navLinks">
-    <a href="#why">Why it's different</a>
     <a href="#showcase">Student projects</a>
-    <a href="#trial">Free trial</a>
-    <a href="#roadmap">Roadmap</a>
+    <a href="#roadmap">20 Lessons</a>
+    <a href="#video">Video</a>
+    <a href="#why">Why us</a>
     <a href="#faq">FAQ</a>
     <a href="#book" class="nav-cta">Book free trial</a>
   </div>
@@ -613,77 +622,20 @@
   </div>
 </header>
 
-<!-- ============ WHY DIFFERENT ============ -->
-<section id="why">
-  <div class="reveal">
-    <span class="eyebrow">Why this is different</span>
-    <h2 class="section-title">Not a coding class.<br>A <span class="grad-text">creation studio</span>.</h2>
-    <p class="section-sub">Your child won't sit through syntax drills. They'll turn their own ideas into things they can play, share, and be proud of.</p>
-  </div>
-  <div class="card-grid">
-    <div class="feat-card fc-1 reveal d1">
-      <span class="feat-num">01</span>
-      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(255,182,72,.25),rgba(255,122,77,.2));">🎮</div>
-      <h3>AI game creation</h3>
-      <p>Kids learn to turn ideas into playable games — describing what they imagine and watching it come alive.</p>
-    </div>
-    <div class="feat-card fc-2 reveal d2">
-      <span class="feat-num">02</span>
-      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(255,122,77,.25),rgba(255,182,72,.2));">🌐</div>
-      <h3>Roblox worlds</h3>
-      <p>Students build interactive 3D experiences that their friends can actually explore and play.</p>
-    </div>
-    <div class="feat-card fc-3 reveal d3">
-      <span class="feat-num">03</span>
-      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(155,140,255,.28),rgba(95,217,217,.18));">🤖</div>
-      <h3>AI robotics</h3>
-      <p>AI controls real robots in the physical world — kids see their ideas move off the screen.</p>
-    </div>
-    <div class="feat-card fc-4 reveal d4">
-      <span class="feat-num">04</span>
-      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(95,217,217,.28),rgba(155,140,255,.18));">🎤</div>
-      <h3>Creator identity</h3>
-      <p>Students present and explain what they built — growing the confidence to own their ideas out loud.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ SHOWCASE ============ -->
 <section id="showcase" class="showcase">
   <div class="reveal">
     <span class="eyebrow">Student project showcase</span>
     <h2 class="section-title">Real kids. <span class="grad-text">Real creations.</span></h2>
-    <p class="section-sub">Every project here was built by a student — from their first lesson to their final robot. This is what "I made this" looks like.</p>
+    <p class="section-sub">Every project here was built by a student — from their first lesson to their final robot.</p>
+  </div>
+  <div class="show-tabs reveal" id="showTabs">
+    <button class="show-tab active" data-filter="all">All</button>
+    <button class="show-tab" data-filter="AI Game">🎮 Games</button>
+    <button class="show-tab" data-filter="Roblox">🌐 Roblox</button>
+    <button class="show-tab" data-filter="AI Robot">🤖 Robots</button>
   </div>
   <div class="show-grid" id="showGrid"></div>
-</section>
-
-<!-- ============ FREE TRIAL ============ -->
-<section id="trial">
-  <div class="reveal">
-    <span class="eyebrow">The free trial experience</span>
-    <h2 class="section-title">60 minutes. <span class="grad-text">One real game.</span></h2>
-    <p class="section-sub">Here's exactly what happens in your child's first class — from blank idea to a game they take home.</p>
-  </div>
-  <div class="timeline">
-    <div class="tl-line"></div>
-    <div class="tl-step reveal d1"><div class="tl-num">1</div><div><h4>Choose your idea</h4><p>Your child picks a game they've always imagined.</p></div></div>
-    <div class="tl-step reveal d2"><div class="tl-num">2</div><div><h4>AI builds it</h4><p>They direct AI to bring the first version to life.</p></div></div>
-    <div class="tl-step reveal d3"><div class="tl-num">3</div><div><h4>Customize it</h4><p>Colors, characters, rules — they make it theirs.</p></div></div>
-    <div class="tl-step reveal d4"><div class="tl-num">4</div><div><h4>Play &amp; share</h4><p>They play their creation and show it off.</p></div></div>
-    <div class="tl-step reveal d4"><div class="tl-num">5</div><div><h4>Take it home</h4><p>The finished game is theirs to keep.</p></div></div>
-  </div>
-  <div class="trial-video-wrap reveal" id="trialVideoWrap">
-    <div class="trial-poster" id="trialPoster">
-      <img src="images/trial-video-cover.png" alt="Trial class" class="trial-cover-img" />
-      <div class="play-btn">▶</div>
-      <div class="cap">Watch classroom recording</div>
-    </div>
-  </div>
-  <div class="trial-quote reveal">
-    <div class="big">Every student leaves with a real playable game.</div>
-    <div class="em">"Wait… I actually made this?!"</div>
-  </div>
 </section>
 
 <!-- ============ ROADMAP ============ -->
@@ -744,6 +696,56 @@
     <div class="outcome reveal d2"><div class="big">1</div><div class="lbl">Roblox world</div></div>
     <div class="outcome reveal d3"><div class="big">1</div><div class="lbl">working AI robot</div></div>
     <div class="outcome reveal d4"><div class="big">★</div><div class="lbl">presentation skills</div></div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section id="video">
+  <div class="reveal" style="text-align:center;">
+    <span class="eyebrow" style="justify-content:center;">See it in action</span>
+    <h2 class="section-title">Watch our <span class="grad-text">classroom</span></h2>
+    <p class="section-sub" style="margin:0 auto;">Real students, real projects, real excitement.</p>
+  </div>
+  <div class="trial-video-wrap reveal" id="trialVideoWrap" style="margin-top:48px;">
+    <div class="trial-poster" id="trialPoster">
+      <img src="images/trial-video-cover.png" alt="Trial class" class="trial-cover-img" />
+      <div class="play-btn">▶</div>
+      <div class="cap">Watch classroom recording</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY DIFFERENT ============ -->
+<section id="why">
+  <div class="reveal" style="text-align:center;">
+    <h2 class="section-title" style="font-size:clamp(36px,5vw,64px);">Not a coding class.<br>A <span class="grad-text">creation studio</span>.</h2>
+    <p class="section-sub" style="margin:0 auto;max-width:640px;">Your child won't sit through syntax drills. They'll turn their own ideas into things they can play, share, and be proud of.</p>
+  </div>
+  <div class="card-grid" style="margin-top:56px;">
+    <div class="feat-card fc-1 reveal d1">
+      <span class="feat-num">01</span>
+      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(255,182,72,.25),rgba(255,122,77,.2));">🎮</div>
+      <h3>AI game creation</h3>
+      <p>Kids learn to turn ideas into playable games — describing what they imagine and watching it come alive.</p>
+    </div>
+    <div class="feat-card fc-2 reveal d2">
+      <span class="feat-num">02</span>
+      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(255,122,77,.25),rgba(255,182,72,.2));">🌐</div>
+      <h3>Roblox worlds</h3>
+      <p>Students build interactive 3D experiences that their friends can actually explore and play.</p>
+    </div>
+    <div class="feat-card fc-3 reveal d3">
+      <span class="feat-num">03</span>
+      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(155,140,255,.28),rgba(95,217,217,.18));">🤖</div>
+      <h3>AI robotics</h3>
+      <p>AI controls real robots in the physical world — kids see their ideas move off the screen.</p>
+    </div>
+    <div class="feat-card fc-4 reveal d4">
+      <span class="feat-num">04</span>
+      <div class="feat-ico" style="background:linear-gradient(135deg,rgba(95,217,217,.28),rgba(155,140,255,.18));">🎤</div>
+      <h3>Creator identity</h3>
+      <p>Students present and explain what they built — growing the confidence to own their ideas out loud.</p>
+    </div>
   </div>
 </section>
 
@@ -927,6 +929,7 @@
       : "";
     const card=document.createElement('div');
     card.className='proj reveal d'+((i%4)+1);
+    card.dataset.type=p.type;
     card.innerHTML=`
       <div class="proj-thumb" style="background:${p.bg};">
         ${thumbInner}
@@ -941,6 +944,22 @@
     card.querySelector('.proj-thumb').onclick=()=>openVideo(m.video,p.name+' · Age '+p.age);
     sg.appendChild(card);
     io.observe(card);
+  });
+
+  /* ---- showcase tabs filter ---- */
+  document.querySelectorAll('.show-tab').forEach(tab=>{
+    tab.onclick=()=>{
+      document.querySelectorAll('.show-tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter=tab.dataset.filter;
+      document.querySelectorAll('.proj').forEach(p=>{
+        if(filter==='all'||p.dataset.type===filter){
+          p.classList.remove('hidden');
+        }else{
+          p.classList.add('hidden');
+        }
+      });
+    };
   });
 
   /* ---- faq ---- */
