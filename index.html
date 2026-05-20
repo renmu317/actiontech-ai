@@ -766,7 +766,7 @@
     <p>One free 60-minute class. One real game they build and keep. See if it's the spark your child has been waiting for.</p>
     <div class="btn-row" style="justify-content:center;">
       <button class="btn btn-primary" onclick="alert('Booking flow — connect this to your scheduling tool.')">Reserve free trial →</button>
-      <button class="btn btn-ghost" onclick="alert('Contact form — connect this to your inbox.')">Contact us</button>
+      <button class="btn btn-ghost" onclick="document.getElementById('contactModal').style.display='flex'">Contact us</button>
     </div>
     <div class="info-row">
       <div class="info-pill"><span class="k">Ages</span><span class="v">9–14</span></div>
@@ -778,8 +778,27 @@
 
 <footer>
   <div class="logo"><span class="logo-mark">A</span> ActionTech AI Creative Program</div>
-  <div>Flushing, NY · A creative AI studio for kids ages 9–14</div>
+  <div style="text-align:right;">
+    <div style="margin-bottom:6px;">📞 <a href="tel:929-823-6077" style="color:var(--amber);">929-823-6077</a></div>
+    <div>📍 141-05 Cherry Ave, 2nd Fl, Flushing, NY 11355</div>
+  </div>
 </footer>
+
+<!-- Contact Modal -->
+<div id="contactModal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(6,5,9,.86);backdrop-filter:blur(8px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:40px;max-width:400px;text-align:center;">
+    <h3 style="font-size:24px;margin-bottom:24px;">Contact Us</h3>
+    <div style="margin-bottom:20px;">
+      <div style="font-size:14px;color:var(--ink-dim);margin-bottom:6px;">Phone</div>
+      <a href="tel:929-823-6077" style="font-size:20px;font-weight:700;color:var(--amber);">929-823-6077</a>
+    </div>
+    <div style="margin-bottom:28px;">
+      <div style="font-size:14px;color:var(--ink-dim);margin-bottom:6px;">Address</div>
+      <div style="font-size:16px;color:var(--ink);">141-05 Cherry Ave, 2nd Fl<br>Flushing, NY 11355</div>
+    </div>
+    <button onclick="document.getElementById('contactModal').style.display='none'" style="background:var(--card);border:1px solid var(--line);color:var(--ink);padding:12px 28px;border-radius:999px;cursor:pointer;font-size:14px;">Close</button>
+  </div>
+</div>
 
 <div class="modal-bg" id="modalBg">
   <div class="modal-box">
